@@ -1,0 +1,10 @@
+
+.nav_row {
+    padding-top: 10px;
+}
+
+.thirdSection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 7px;
+}

@@ -1,0 +1,14 @@
+div#profileView {
+    margin-top: 50px;
+    margin-inline-end: 10%;
+    margin-inline-start: 10%;
+}
+
+.nameField {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.bio {
+    margin-bottom: 10px; 
+}

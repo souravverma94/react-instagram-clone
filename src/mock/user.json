@@ -1,0 +1,11 @@
+[
+    {
+        "userId": "101",
+        "userName": "poireese",
+        "Name": "John Reese",
+        "imgSrc": "Reese.jpg",
+        "Followers": [],
+        "Following": [],
+        "Posts": [] 
+    }
+]
