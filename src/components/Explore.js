@@ -1,16 +1,24 @@
 import React from 'react';
 import ProfileView from './profileView';
+import { useEndpoint } from './Home';
 
 
 const Explore = () => {
+    const userApi = {
+        method: "GET",
+        url: "http://localhost:3001/users"
+    };
+    const users = useEndpoint(userApi).data;
+    console.log(users);
+    let profiles;
+    if(users){
+        profiles = users.map(user => {
+            return <ProfileView key={user.username} name={user.name} imgSrc={user.imgSrc} posts={user.posts.length} followers={user.followers.length} following={user.following.length} />
+        })
+    }
     return (
         <React.Fragment>
-            <ProfileView name="Elizabeth Olsen" imgSrc="Elizabeth_Olsen.jpg" posts={10} followers={100} following={200} />
-            <ProfileView name="Dwayne johnson" imgSrc="rock.jpg" posts={10} followers={100} following={200} />
-            <ProfileView name="Spider Man" imgSrc="spidy.jpg" posts={10} followers={100} following={200} />
-            <ProfileView name="Thor" imgSrc="thor.jpg" posts={10} followers={100} following={200} />
-            <ProfileView name="Captain America" imgSrc="cap.jpg" posts={10} followers={100} following={200} />
-            <ProfileView name="Iron Man" imgSrc="ironman.jpg" posts={10} followers={100} following={200} />
+            {profiles ? profiles : null}
         </React.Fragment>
     );
 }

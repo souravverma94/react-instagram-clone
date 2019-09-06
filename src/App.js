@@ -1,6 +1,5 @@
 import React from 'react';
 import NavBar from './components/NavBar';
-import ProfileView from './components/profileView';
 import Home from './components/Home';
 import Explore from './components/Explore';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
