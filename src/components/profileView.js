@@ -21,7 +21,7 @@ const propTypes = {
 
 
 const ProfileView = (props) => {
-    const { name, username, imgSrc, followers, following, posts, isFollowing} = props;
+    const { name, username, imgSrc, followers, following, posts, isFollowing } = props;
     const [state, setState] = useState({ isFollowing: isFollowing });
 
     useEffect(() => {
@@ -36,9 +36,21 @@ const ProfileView = (props) => {
                     console.log(res.data);
                     props.incrementCount();
                 });
+            axios.put(`http://localhost:3001/users/${username}/removefollower`, { username: 'johnreese' })
+                .then(res => {
+                    console.log(res);
+                    console.log(res.data);
+                    props.incrementCount();
+                });
         }
         else {
             axios.put(`http://localhost:3001/users/johnreese/addfollowing`, { username: username })
+                .then(res => {
+                    console.log(res);
+                    console.log(res.data);
+                    props.incrementCount();
+                });
+            axios.put(`http://localhost:3001/users/${username}/addfollower`, { username: 'johnreese' })
                 .then(res => {
                     console.log(res);
                     console.log(res.data);
@@ -62,7 +74,7 @@ const ProfileView = (props) => {
                             <Row className="bio">
                                 <Col>{name}</Col>
                                 <Col>
-                                    {username!=="johnreese"?<Button onClick={() => handleClick()} variant="primary" size="sm">{state.isFollowing ? "Following" : "Follow"}</Button>:null}
+                                    {username !== "johnreese" ? <Button onClick={() => handleClick()} variant="primary" size="sm">{state.isFollowing ? "Following" : "Follow"}</Button> : null}
                                 </Col>
                             </Row>
                             <Row>
