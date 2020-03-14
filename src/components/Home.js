@@ -7,7 +7,7 @@ const Home = () => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/users/johnreese')
+        axios.get('https://react-insta-backend.herokuapp.com/users/johnreese')
             .then(res => {
                 console.log("Success");
                 setUser(res.data);

@@ -30,13 +30,13 @@ const ProfileView = (props) => {
 
     const handleClick = () => {
         if (state.isFollowing) {
-            axios.put(`http://localhost:3001/users/johnreese/removefollowing`, { username: username })
+            axios.put(`https://react-insta-backend.herokuapp.com/users/johnreese/removefollowing`, { username: username })
                 .then(res => {
                     console.log(res);
                     console.log(res.data);
                     props.incrementCount();
                 });
-            axios.put(`http://localhost:3001/users/${username}/removefollower`, { username: 'johnreese' })
+            axios.put(`https://react-insta-backend.herokuapp.com/users/${username}/removefollower`, { username: 'johnreese' })
                 .then(res => {
                     console.log(res);
                     console.log(res.data);
@@ -44,13 +44,13 @@ const ProfileView = (props) => {
                 });
         }
         else {
-            axios.put(`http://localhost:3001/users/johnreese/addfollowing`, { username: username })
+            axios.put(`https://react-insta-backend.herokuapp.com/users/johnreese/addfollowing`, { username: username })
                 .then(res => {
                     console.log(res);
                     console.log(res.data);
                     props.incrementCount();
                 });
-            axios.put(`http://localhost:3001/users/${username}/addfollower`, { username: 'johnreese' })
+            axios.put(`https://react-insta-backend.herokuapp.com/users/${username}/addfollower`, { username: 'johnreese' })
                 .then(res => {
                     console.log(res);
                     console.log(res.data);
