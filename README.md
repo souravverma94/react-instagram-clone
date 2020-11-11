@@ -1,3 +1,5 @@
+## Project is hosted on Heroku
+Link: [my-react-instagram](http://react-insta-frontend.herokuapp.com/explore)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
