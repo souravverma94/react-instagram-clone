@@ -2,3 +2,13 @@ div#navBar {
   height: 60px;
   background: ghostwhite;
 }
+
+@media (min-width: 767px) {
+  .app-container {
+    width: 80%;
+  }
+}
+
+.app-container {
+  margin: auto;
+}
